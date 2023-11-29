@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        border,th,td,tr{
+        border:2px solid blue;
+        border-collapse:collapse;
+    }
+    .manage{
+        display: flex;
+        
+    }
+    .login{
+        margin-left: 19rem;
+        margin-top:20px ;
+        
+    }
+    button{
+        color:blue;
+    }
+    .whole{
+        margin-left: 20rem;
+        margin-top: 70px;
+    }
+    .finance{
+        color:blue;
+    }
+    
+    </style>
+</head>
+<body>
+    <div class="whole">
+    <div class="manage">
+    <div class="finance">
+    <h2>FINANCIAL_MANAGEMENT</h2>
+    </div>
+     <div class="login"> 
+            <a href="{{url_for('login')}}"><button>LOGIN</button></a>
+            <a href="{{url_for('logout')}}"><button>LOGOUT</button></a>
+            <a href="{{url_for('signin')}}"><button>SIGN_IN</button></a> 
+            <a href="{{url_for('add')}}"><button>ADD</button></a>
+            </div>
+            </div>
+    <table>
+        <div class="first">
+        <tr>
+        <th>SERIAL.NO</th>
+        <th>NAME</th>
+        <th>FUND</th>
+        <th>INVESTED_AMOUNT</th>
+        <th>UNIT</th>
+        <th>NAV</th>
+        <th>CURRENT_VALUE</th>
+        <th>GROWTH</th>
+        <th>EDIT</th>
+        <th>DELETE</th>
+        </tr>
+        </div>
+        {%for i in datas%}
+        <tr>
+            
+            <td>{{loop.index}}</td>
+            <td>{{i.name}}</td>
+            <td>{{i.fund_house}}</td>
+            <td>{{i.invested}}</td>
+            <td>{{i.unit}}</td>
+            <td>{{i.nav}}</td>
+            <td>{{i.current}}</td>
+            <td>{{i.growth}}</td>
+            <td><a href="{{url_for('edit',id=i.id)}}">Edit</a></td> 
+            <td><a href="{{url_for('delete',id=i.id)}}">Delete</a></td>
+        </tr>
+        {%endfor%}
+        
+    </table>
+    </div>
+</body>
+</html>

@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .EDIT{
+        margin-left:33rem;
+        margin-top: 10rem;
+        border: 2px solid blue;
+        width: 15rem;
+        padding-left: 25px;
+        padding-bottom: 15px;
+    }
+    h2{
+        color: blue;
+        margin-left: 20px;
+    }
+    
+    </style>
+</head>
+<body>
+    <form method="post">
+        <div class="EDIT">
+            <h2>EDIT</h2>
+            
+
+        <input type="text" name="name"  value="{{datas.name}}" placeholder="Enter the name"><br><br>
+        <input type="number" name="fund"  value="{{datas.fund}}" placeholder="Enter the fund"><br><br>
+        <input type="number" name="invested" value="{{datas.invested}}"  placeholder="Enter the invested"><br><br>
+        <input type="number" name="unit"  value="{{datas.unit}}"  placeholder="Enter the unit"><br><br>
+        <input type="submit" value="submit">
+    </form>
+</body>
+</html>
